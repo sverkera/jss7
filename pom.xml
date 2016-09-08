@@ -35,6 +35,7 @@
 		<javolution.version>5.5.1</javolution.version>
 		<compiler.plugin.version>2.0.2</compiler.plugin.version>
 		<compile.source>1.7</compile.source>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<!-- restcomm but not strictly ss7 -->
 		<asn.version>2.1.5</asn.version> <!-- 2.0.3.FINAL -->
 		<stream.version>1.0.0.CR1</stream.version>
@@ -442,6 +443,7 @@
 	</licenses>
 
 	<build>
+		<pluginManagement>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -512,10 +514,12 @@
 					<source>${compile.source}</source>
 					<target>${compile.source}</target>
 					<debug>${compile.debug}</debug>
+					<encoding>UTF-8</encoding>
 				</configuration>
 			</plugin>
 
 		</plugins>
+		</pluginManagement>
 	</build>
 
 	<scm>

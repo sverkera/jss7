@@ -18,7 +18,6 @@
 	<modules>
 		<module>map-api</module>
 		<module>map-impl</module>
-		<module>load</module>
 	</modules>
 
 	<build>
@@ -52,6 +51,18 @@
 			<id>release</id>
 			<modules>
 				<module>release</module>
+			</modules>
+		</profile>
+		<profile>
+			<id>linux</id>
+			<activation>
+				<property>
+					<name>platform</name>
+					<value>linux</value>
+				</property>
+			</activation>
+			<modules>
+				<module>load</module>
 			</modules>
 		</profile>
 	</profiles>

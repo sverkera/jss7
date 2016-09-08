@@ -100,15 +100,28 @@
 			<groupId>org.mobicents.protocols.ss7.mtp</groupId>
 			<artifactId>mtp</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>org.mobicents.protocols.ss7.hardware</groupId>
-			<artifactId>restcomm-dialogic</artifactId>
-		</dependency>
 	</dependencies>
-	<dependencyManagement>
-		<dependencies>
-		</dependencies>
-	</dependencyManagement>
 
-
+	<profiles>
+		<profile>
+			<id>linux</id>
+			<activation>
+				<os>
+					<name>Linux</name>
+				</os>
+			</activation>
+			<dependencies>
+				<!-- Hardware Dahdi Java -->
+				<dependency>
+					<artifactId>restcomm-dahdi</artifactId>
+					<groupId>org.mobicents.protocols.ss7.hardware</groupId>
+				</dependency>
+				<!-- Hardware Dialogic Java -->
+				<dependency>
+					<artifactId>restcomm-dialogic</artifactId>
+					<groupId>org.mobicents.protocols.ss7.hardware</groupId>
+				</dependency>
+			</dependencies>
+		</profile>
+	</profiles>
 </project>

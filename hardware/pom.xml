@@ -23,8 +23,6 @@
 	<modules>
 		<module>linkset</module>
 		<module>cli</module>
-		<module>dahdi</module>
-		<module>dialogic</module>
 	</modules>
 
 	<profiles>
@@ -32,6 +30,19 @@
 			<id>maven-release</id>
 			<modules>
 				<!-- -->
+				<module>dahdi</module>
+				<module>dialogic</module>
+			</modules>
+		</profile>
+		<profile>
+			<id>linux</id>
+			<activation>
+				<property>
+					<name>platform</name>
+					<value>linux</value>
+				</property>
+			</activation>
+			<modules>
 				<module>dahdi</module>
 				<module>dialogic</module>
 			</modules>
